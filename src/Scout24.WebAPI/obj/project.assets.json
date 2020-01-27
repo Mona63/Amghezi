@@ -13003,11 +13003,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\Mona\\Scout24\\Scout24.WebAPI\\Scout24.WebAPI.csproj",
+      "projectUniqueName": "D:\\Projects\\Mona\\Scout24\\Amghezi\\src\\Scout24.WebAPI\\Scout24.WebAPI.csproj",
       "projectName": "Scout24.WebAPI",
-      "projectPath": "D:\\Projects\\Mona\\Scout24\\Scout24.WebAPI\\Scout24.WebAPI.csproj",
+      "projectPath": "D:\\Projects\\Mona\\Scout24\\Amghezi\\src\\Scout24.WebAPI\\Scout24.WebAPI.csproj",
       "packagesPath": "C:\\Users\\m_akhgari\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\Mona\\Scout24\\Scout24.WebAPI\\obj\\",
+      "outputPath": "D:\\Projects\\Mona\\Scout24\\Amghezi\\src\\Scout24.WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13027,8 +13027,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\Projects\\Mona\\Scout24\\Scout24.Core\\Scout24.Core.csproj": {
-              "projectPath": "D:\\Projects\\Mona\\Scout24\\Scout24.Core\\Scout24.Core.csproj"
+            "D:\\Projects\\Mona\\Scout24\\Amghezi\\src\\Scout24.Core\\Scout24.Core.csproj": {
+              "projectPath": "D:\\Projects\\Mona\\Scout24\\Amghezi\\src\\Scout24.Core\\Scout24.Core.csproj"
             }
           }
         }

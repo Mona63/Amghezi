@@ -14,6 +14,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Scout24.Core.Models;
 using Scout24.Core.Queries;
+using Scout24.Core.Queries.Quey;
 
 namespace Scout24.WebAPI
 {
@@ -25,13 +26,15 @@ namespace Scout24.WebAPI
         }
 
         public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
+        // source.AddScoped<IQueryHandler<TQuery, TResult>, TQueryHandler>();
+        // This method gets called by the runtime. Use this method to add services to the container.AllCarsQuery:IQuery<IEnumerable<Car>>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.TryAddScoped<ICarQuery, CarQuery>();
-           
+            services.AddScoped<IQueryHandler<AllCarsQuery, IEnumerable<Car>>, AllCarsQueryHandler>();
+               // .AddQuery<AllCarsQuery, IEnumerable<Car>, AllCarsQueryHandler>();
+               
+
 
             // ===== Add our DbContext ========
             services.AddDbContext<Scout24Context>(options =>
