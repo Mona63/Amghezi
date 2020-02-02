@@ -14,7 +14,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Scout24.Core.Models;
 using Scout24.Core.Queries;
-using Scout24.Core.Queries.Quey;
+using Scout24.Core.Queries.Handler;
+using Scout24.Core.Queries.Query;
 
 namespace Scout24.WebAPI
 {

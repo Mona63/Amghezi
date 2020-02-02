@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Scout24.Core.Dtos;
 using Scout24.Core.Models;
 using Scout24.Core.Queries;
-using Scout24.Core.Queries.Quey;
+using Scout24.Core.Queries.Query;
 
 namespace Scout24.WebAPI.Controllers
 {

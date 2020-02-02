@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Scout24.Core.Models;
 
-namespace Scout24.Core.Queries.Quey
+namespace Scout24.Core.Queries.Query
 {
     public class AllCarsQuery : IQuery<IEnumerable<Car>>
     {

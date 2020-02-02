@@ -5,8 +5,9 @@ using Scout24.Core.Models;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Scout24.Core.Queries.Query;
 
-namespace Scout24.Core.Queries.Quey
+namespace Scout24.Core.Queries.Handler
 {
     public class AllCarsQueryHandler : IQueryHandler<AllCarsQuery, IEnumerable<Car>>
     {
@@ -18,6 +19,10 @@ namespace Scout24.Core.Queries.Quey
         }
         public async Task<IEnumerable<Car>> Get(AllCarsQuery query)
         {
+            if (query.pageIndex<0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
             var cars = (from car in _context.Car.Skip(query.pageIndex).Take(query.pageCount)
                        select car);
             return await cars.ToArrayAsync();
