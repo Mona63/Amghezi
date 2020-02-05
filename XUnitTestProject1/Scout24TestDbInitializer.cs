@@ -10,6 +10,7 @@ namespace XUnitTestProject1
         public void Initialize(Scout24Context db)
         {
             db.Car.AddRange(GetCars());
+            db.SaveChanges();
         }
         private IEnumerable<Car> GetCars()
         {

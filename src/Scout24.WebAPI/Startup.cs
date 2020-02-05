@@ -27,6 +27,15 @@ namespace Scout24.WebAPI
         }
 
         public IConfiguration Configuration { get; }
+        public void ConfigureDbContext(DbContextOptionsBuilder options)
+        {
+            options
+                .UseSqlServer(
+                    Configuration.GetConnectionString("SQLConnection"),
+                    builder => builder.MigrationsAssembly("Scout24.WebAPI")
+                )
+                .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+        }
         // source.AddScoped<IQueryHandler<TQuery, TResult>, TQueryHandler>();
         // This method gets called by the runtime. Use this method to add services to the container.AllCarsQuery:IQuery<IEnumerable<Car>>
         public void ConfigureServices(IServiceCollection services)
@@ -38,8 +47,7 @@ namespace Scout24.WebAPI
 
 
             // ===== Add our DbContext ========
-            services.AddDbContext<Scout24Context>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("SQLConnection")));
+            services.AddDbContext<Scout24Context>(ConfigureDbContext);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
